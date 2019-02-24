@@ -20,7 +20,7 @@ Once you run `gradle dist`, a ZIP file with a specific, optimized JVM for your l
 
 ## CI/CD for Windows, Mac, and Linux
 
-This project comes with an [Azure Pipelines](Visit https://azure.microsoft.com/en-us/services/devops/pipelines/) setup. It is ready to produce binaries for Windows, Mac, and Linux. Visit the service to set up your account, and [integrate with GitHub](https://medium.com/microsoftazure/build-pipelines-for-github-projects-59dd9229a758).
+This project comes with an [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/) setup. It is ready to produce binaries for Windows, Mac, and Linux. Visit the service to set up your account, and [integrate with GitHub](https://medium.com/microsoftazure/build-pipelines-for-github-projects-59dd9229a758).
 
 ### Looking for a Maven archetype ?
 
