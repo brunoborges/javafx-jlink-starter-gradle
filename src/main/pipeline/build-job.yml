@@ -5,6 +5,7 @@ parameters:
   name: ''
   pool: ''
   platform: ''
+  appPackaging: ''
   sign: false
 
 jobs:
@@ -21,4 +22,4 @@ jobs:
         tasks: 'jlinkZip'
     - task: PublishBuildArtifacts@1
       inputs:
-        pathToPublish: '$(System.DefaultWorkingDirectory)/build/distributions/*-${{ parameters.platform }}.zip'
+        pathToPublish: '$(System.DefaultWorkingDirectory)/build/distributions/${{ parameters.appPackaging }}-${{ parameters.platform }}.zip'

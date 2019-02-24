@@ -4,12 +4,17 @@
 trigger:
   - master
 
+# Ensure this is the same as in build.gradle
+variables:
+  appPackaging: fxapp
+
 jobs:
   # Linux job
   - template: src/main/pipeline/build-job.yml
     parameters:
       name: Linux
       platform: linux
+      appPackaging: $(appPackaging)
       pool:
         vmImage: 'ubuntu-16.04'
 
@@ -18,6 +23,7 @@ jobs:
     parameters:
       name: MacOS
       platform: mac
+      appPackaging: $(appPackaging)
       pool:
         vmImage: 'macOS-10.13'
 
@@ -26,5 +32,6 @@ jobs:
     parameters:
       name: Windows
       platform: win
+      appPackaging: $(appPackaging)
       pool:
         vmImage: 'windows-2019'
