@@ -4,7 +4,7 @@ This is a starter project to help Java developers get started with building cros
 
 Simply clone this project and start coding. Adjust parameters like project name, package name and so on.
 
-[![Build Status](https://dev.azure.com/brunoborges-github/javafx-jlink-starter-gradle/_apis/build/status/brunoborges.javafx-jlink-starter-gradle?branchName=master)](https://dev.azure.com/brunoborges-github/javafx-jlink-starter-gradle/_build/latest?definitionId=1&branchName=master)
+[![Build Status](https://dev.azure.com/brunoborges-github/javafx-jlink-starter-gradle/_apis/build/status/brunoborges.javafx-jlink-starter-gradle?branchName=master&label=Build)](https://dev.azure.com/brunoborges-github/javafx-jlink-starter-gradle/_build/latest?definitionId=1&branchName=master)
 
 ## Building and running
 
