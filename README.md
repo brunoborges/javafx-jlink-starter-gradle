@@ -26,7 +26,8 @@ You can add modules and dependencies using Gradle. Here's an example with icon p
         jcenter()
     }
     dependencies {
-        compile 'org.kordamp.ikonli:ikonli-javafx:11.1.0'
+         implementation 'org.kordamp.ikonli:ikonli-javafx:11.1.0'
+         implementation 'org.kordamp.ikonli:ikonli-fontawesome-pack:11.1.0'
     }
     ```
 
@@ -36,6 +37,8 @@ You can add modules and dependencies using Gradle. Here's an example with icon p
     module fxapp {
         ...
         // add icon pack modules
+        requires org.kordamp.iconli.core;
+        requires org.kordamp.ikonli.javafx;
         requires org.kordamp.ikonli.fontawesome;
     }
     ```
