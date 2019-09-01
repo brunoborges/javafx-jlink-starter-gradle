@@ -1,6 +1,6 @@
 # JavaFX Starter Project with Gradle and Jlink (Java 11+)
 
-This is a starter project to help Java developers get started with building cross-platform graphical applications.
+This is a starter project to help Java developers get started with building cross-platform graphical applications using JavaFX and Java 11 modules.
 
 Simply clone this project and start coding. Adjust parameters like project name, package name and so on.
 
@@ -14,9 +14,37 @@ You will need [OpenJDK 11](http://jdk.java.net/11/) (or newer).
 ./gradlew dist run
 ```
 
-### Running from an IDE
+## Adding modules and dependencies
 
-If you want to 
+You can add modules and dependencies using Gradle. Here's an example with icon packs from [Ikonli](https://aalmiray.github.io/ikonli/) project, by [Andres Almiray](http://andresalmiray.com/).
+
+1. Clone this repository.
+1. Add `ikonli-javafx` and an icon pack as dependencies.
+
+    ```
+    repositories {
+        jcenter()
+    }
+    dependencies {
+         implementation 'org.kordamp.ikonli:ikonli-javafx:11.1.0'
+         implementation 'org.kordamp.ikonli:ikonli-fontawesome-pack:11.1.0'
+    }
+    ```
+
+1. Modify `module-info.java` to require ikonli modules.
+
+    ```
+    module fxapp {
+        ...
+        // add icon pack modules
+        requires org.kordamp.iconli.core;
+        requires org.kordamp.ikonli.javafx;
+        requires org.kordamp.ikonli.fontawesome;
+    }
+    ```
+
+1. Invoke the `dist` target.
+1. Run the generated image.
 
 ## Distribution images
 
