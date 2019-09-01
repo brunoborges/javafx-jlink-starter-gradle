@@ -1,9 +1,10 @@
 plugins {
     id 'java'
+    id 'eclipse'
     id 'application'
-    id 'org.openjfx.javafxplugin'      version '0.0.7'
-    id 'org.beryx.jlink'               version '2.6.4'
-    id 'com.github.ben-manes.versions' version '0.20.0'
+    id 'org.openjfx.javafxplugin'      version '0.0.8'
+    id 'org.beryx.jlink'               version '2.15.1'
+    id 'com.github.ben-manes.versions' version '0.23.0'
 }
 
 // Application Configuration
@@ -22,7 +23,12 @@ repositories {
 }
 
 javafx {
-    modules = ['javafx.controls']
+    version = '12'
+    modules = [
+       'javafx.base',
+       'javafx.graphics',
+       'javafx.controls'
+    ]
 }
 
 jlink {
@@ -39,3 +45,26 @@ task dist {
 }
 
 defaultTasks 'dist'
+
+if (project.hasProperty('debugRun') && project.debugRun as boolean) {
+    run {
+        jvmArgs '-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=*:5005'
+    }
+}
+
+eclipse {
+    classpath {
+        containers 'org.eclipse.buildship.core.gradleclasspathcontainer'
+        file {
+            whenMerged {
+                entries.findAll { it.properties.kind.equals('lib') && !it.properties.path.contains("junit") }.each {
+                    it.entryAttributes['module'] = 'true'
+                }
+                entries.findAll { it.properties.path.startsWith('org.eclipse.jdt.launching.JRE_CONTAINER') }.each {
+                    it.entryAttributes['module'] = 'true'
+                }
+
+            }
+        }
+    }
+}

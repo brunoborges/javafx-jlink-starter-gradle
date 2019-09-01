@@ -14,6 +14,10 @@ You will need [OpenJDK 11](http://jdk.java.net/11/) (or newer).
 ./gradlew dist run
 ```
 
+### Running from an IDE
+
+If you want to 
+
 ## Distribution images
 
 Once you run `gradle dist`, a ZIP file with a specific, optimized JVM for your local platform (Windows, Mac, Linux) will be generated inside `build/distributions`.

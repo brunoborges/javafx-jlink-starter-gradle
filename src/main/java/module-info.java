@@ -2,9 +2,9 @@ module fxapp {
     requires java.base;
     requires java.logging;
 
-    requires transitive javafx.base;
-    requires transitive javafx.graphics;
-    requires transitive javafx.controls;
+    requires javafx.base;
+    requires javafx.graphics;
+    requires javafx.controls;
 
     exports fxapp;
 }
