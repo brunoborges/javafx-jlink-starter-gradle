@@ -2,8 +2,8 @@ plugins {
     id 'java'
     id 'eclipse'
     id 'application'
-    id 'org.openjfx.javafxplugin'      version '0.0.8'
-    id 'org.beryx.jlink'               version '2.15.1'
+    id 'org.openjfx.javafxplugin'      version '0.0.13'
+    id 'org.beryx.jlink'               version '2.25.0'
     id 'com.github.ben-manes.versions' version '0.23.0'
 }
 
@@ -16,14 +16,17 @@ ext {
     appMainClass = "fxapp.App"
 }
 
-mainClassName = "${ext.appModuleName}/${ext.appMainClass}"
+application {
+    mainModule = "${project.ext.appModuleName}"
+    mainClass = "${project.ext.appMainClass}"
+}
 
 repositories {
     mavenCentral()
 }
 
 javafx {
-    version = '12'
+    version = '17'
     modules = [
        'javafx.base',
        'javafx.graphics',
