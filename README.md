@@ -1,4 +1,4 @@
-# JavaFX Starter Project with Gradle and Jlink (Java 11+)
+# JavaFX Starter Project with Gradle and Jlink (Java 17+)
 
 This is a starter project to help Java developers get started with building cross-platform graphical applications using JavaFX and Java 11 modules.
 
@@ -8,7 +8,7 @@ Simply clone this project and start coding. Adjust parameters like project name,
 
 ## Building and running
 
-You will need [OpenJDK 11](http://jdk.java.net/11/) (or newer).
+You will need [OpenJDK 17](http://jdk.java.net/17/) (or newer).
 
 ```bash
 ./gradlew dist run
